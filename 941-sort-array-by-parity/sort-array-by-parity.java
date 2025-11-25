@@ -1,18 +1,20 @@
 class Solution {
+    public static void swap(int[] nums, int i, int j){
+      int temp = nums[i];
+      nums[i] = nums[j];
+      nums[j] = temp;
+    }
     public int[] sortArrayByParity(int[] nums) {
-        int n = nums.length;
-        int[] result = new int[n];
-        int idx =0;
-        for(int num: nums){
-          if(num % 2 == 0){
-           result[idx++] = num;
-          }
+        int i=0, j=0;
+        while(i < nums.length){
+         if(nums[i]%2 == 0){
+          swap(nums, i, j);
+          i++;
+          j++;
+         }else{
+            i++;
+         }
         }
-         for(int num: nums){
-          if(num % 2 != 0){
-           result[idx++] = num;
-          }
-        }
-        return result;
+        return nums;
     }
 }
