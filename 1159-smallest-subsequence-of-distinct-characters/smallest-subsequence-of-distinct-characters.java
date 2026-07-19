@@ -18,10 +18,10 @@ class Solution {
           stack.offerLast(c);
           visted[idx] = true;
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for(char ch: stack){
-          sb.append(ch);
+          result.append(ch);
         }
-        return sb.toString();
+        return result.toString();
     }
 }
